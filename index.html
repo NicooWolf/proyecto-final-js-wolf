@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Font awesome -->
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css"
+        integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!--- Toastify -->
+
+    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
+
+    <!--- Sweet Alert -->
+
+    <link rel="stylesheet" href="sweetalert2.min.css" />
+
+    <!-- Styles -->
+    <link rel="stylesheet" href="style.css">
+
+    <title>Parrilla la Nueva Adelina</title>
+</head>
+
+<body>
+
+
+    <!-- header  -->
+    <header>
+        <div class="container">
+            <!-- navbar -->
+            <nav class="navbar">
+                <a href="index.html" class="navbar-brand">Nueva Adelina.</a>
+                <button type="button" class="navbar-toggler">
+                    <i class="fas fa-bars"></i>
+                </button>
+                <div class="navbar-collapse">
+                    <ul>
+                        <li><a href="#">Inicio</a></li>
+                        <li><a href="pages/contact.html">Contacto</a></li>
+                    </ul>
+                </div>
+
+                <div class="cart">
+                    <button type="button" id="cart-btn">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span id="cart-count-info"></span>
+                    </button>
+
+                    <div class="cart-container">
+                        <div class="cart-list">
+
+                        </div>
+
+                        <div class="cart-total">
+                            <h3>Total: $</h3>
+                            <span id="cart-total-value"></span>
+                        </div>
+                    </div>
+                </div>
+            </nav>
+            <!-- end of navbar -->
+
+            <!-- banner -->
+            <div class="banner">
+                <div class="banner-content">
+                    <h1>Parrilla la Nueva Adelina</h1>
+                    <p class="text">
+                        La mejor parrilla de Villa Adelina! <br> Contamos con carnes de primera calidad.
+
+                </div>
+
+
+            </div>
+            <!-- end of banner  -->
+        </div>
+    </header>
+    <!-- end of header -->
+
+    <!-- products section  -->
+    <section class="products">
+        <div class="container">
+            <h2>Nuestras Comidas</h2>
+            <div class="product-list">
+
+            </div>
+        </div>
+    </section>
+    <!-- end of products section -->
+
+    <!-- footer -->
+    <footer>
+        <!-- <div class="footer-banner">
+            <div class="container">
+                <h2>Unlimited Furniture Collection</h2>
+                <p class="text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Maiores est quod maxime nisi
+                    possimus corporis qui aliquid molestias sit iusto itaque, cum delectus tempore, distinctio velit.
+                    Repellat reiciendis suscipit quidem aliquid ipsam, nemo minus repudiandae quas eligendi natus
+                    voluptate nostrum?</p>
+                <button type="button" class="btn">View More</button>
+            </div>
+        </div> -->
+
+        <div class="container">
+            <div class="social-icons">
+                <a href="https://www.facebook.com/parrillalanuevaadelina" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+                <a href="https://www.instagram.com/parrillalanuevaadelina/" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.whatsapp.com/" target="_blank">
+                    <i class="fab fa-whatsapp"></i>
+                </a>
+            </div>
+        </div>
+    </footer>
+    <button id="test">TESTs</button>
+    <!-- end of footer -->
+
+
+    <script src="app.js" type="module"></script>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
+    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+</body>
+
+</html>

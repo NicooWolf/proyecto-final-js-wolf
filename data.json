@@ -1,0 +1,74 @@
+[
+  {
+    "name": "Alitas de pollo",
+    "category": "Pollo",
+    "price": "1000",
+    "imgSrc": "images/alitas de pollo.jpg"
+  },
+  {
+    "name": "Bife",
+    "category": "Carne de vaca",
+    "price": "1400",
+    "imgSrc": "images/bife.jpg"
+  },
+  {
+    "name": "Carne con pesto",
+    "category": "Carne de vaca",
+    "price": "1500",
+    "imgSrc": "images/carne-pesto.jpg"
+  },
+  {
+    "name": "Estofado de carne",
+    "category": "Carne de vaca",
+    "price": "1500",
+    "imgSrc": "images/estofado de carne.jpg"
+  },
+  {
+    "name": "Fritas normales",
+    "category": "Papas fritas",
+    "price": "700",
+    "imgSrc": "images/fritas.jpg"
+  },
+  {
+    "name": "Hamburguesa Adelina",
+    "category": "Hamburguesa",
+    "price": "1000",
+    "imgSrc": "images/hamburgesa adelina.jpg"
+  },
+  {
+    "name": "Matambre a la pizza",
+    "category": "Carne de cerdo",
+    "price": "1600",
+    "imgSrc": "images/matambre.jpg"
+  },
+  {
+    "name": "Ojo de bife",
+    "category": "Carne de vaca",
+    "price": "1800",
+    "imgSrc": "images/ojo de bife.jpg"
+  },
+  {
+    "name": "Parrillada Completa",
+    "category": "Parrillada",
+    "price": "2500",
+    "imgSrc": "images/parrillada completa.jpg"
+  },
+  {
+    "name": "Parrillada Simple",
+    "category": "Parrillada",
+    "price": "2000",
+    "imgSrc": "images/parrillada.jpg"
+  },
+  {
+    "name": "Pato a la cacerola",
+    "category": "Pato",
+    "price": "2400",
+    "imgSrc": "images/pato a la cacerola.jpg"
+  },
+  {
+    "name": "Pechito de cerdo",
+    "category": "Carne de cerdo",
+    "price": "1800",
+    "imgSrc": "images/pechito de cerdo.jpg"
+  }
+]
