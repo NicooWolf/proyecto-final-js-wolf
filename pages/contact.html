@@ -12,19 +12,12 @@
         integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
 
-    <!--- Toastify -->
-
-    <link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/toastify-js/src/toastify.min.css" />
-
-    <!--- Sweet Alert -->
-
-    <link rel="stylesheet" href="sweetalert2.min.css" />
-
     <!-- Styles -->
 
     <link rel="stylesheet" href="../style.css">
 
     <title>Contacto</title>
+
 </head>
 
 <body>
@@ -55,9 +48,18 @@
 
         </div>
 
-        <div>
-            <form action="">
-
+        <div class="container" id="container">
+            <form action="https://formsubmit.co/f3dbeb4f2a3d39f10224f11ec3787ed5" method="POST" class="form-container">
+                <label for="nombre">Nombre:</label>
+                <input type="text" name="nombre" required placeholder="Nombre">
+                <label for="apellido">Apellido:</label>
+                <input type="text" name="apellido" placeholder="Apellido">
+                <label for="mensaje">Mensaje:</label>
+                <input type="text" name="mensaje" placeholder="Escribi lo que gustes">
+                <label for="email">Email:</label>
+                <input type="email" name="email" required placeholder="Email">
+                <input type="hidden" name="_next" value="proyectofinaljswolf.netlify.app/pages/thanks.html">
+                <button type="submit" class="btn-confirm">Enviar</button>
             </form>
         </div>
 
@@ -80,8 +82,7 @@
     </header>
 
     <script src="../scripts/contact.js"></script>
-    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/toastify-js"></script>
-    <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+
 </body>
 
 </html>
