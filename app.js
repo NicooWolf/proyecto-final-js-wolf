@@ -6,6 +6,7 @@ import {
   cartCountInfo,
   cartTotalValue,
   productList,
+  confirmPurchaseBtn,
 } from "./scripts/constants.js";
 
 // Declaro el ItemID
@@ -107,32 +108,32 @@ const addToCartList = (product) => {
 // Guardamos el producto en el local storage
 
 const saveProductInStorage = (item) => {
-  let productos = getProductFromStorage();
-  productos.push(item);
-  localStorage.setItem("productos", JSON.stringify(productos));
+  let product = getProductFromStorage();
+  product.push(item);
+  localStorage.setItem("product", JSON.stringify(product));
   updateCartInfo();
 };
 
 // agarramos toda la info del local storage si es que hay alguna
 
 const getProductFromStorage = () => {
-  return localStorage.getItem("productos")
-    ? JSON.parse(localStorage.getItem("productos"))
+  return localStorage.getItem("product")
+    ? JSON.parse(localStorage.getItem("product"))
     : [];
   // retorno un array vacio si no hay nada en el local storage
 };
 
-// Cargamos los productos del carrito
+// Cargamos los product del carrito
 
 const loadCart = () => {
-  let productos = getProductFromStorage();
-  if (productos.length < 1) {
+  let product = getProductFromStorage();
+  if (product.length < 1) {
     cartItemID = 1;
   } else {
-    cartItemID = productos[productos.length - 1].id;
+    cartItemID = product[product.length - 1].id;
     cartItemID++;
   }
-  productos.forEach((product) => addToCartList(product));
+  product.forEach((product) => addToCartList(product));
 
   updateCartInfo();
 };
@@ -140,15 +141,15 @@ const loadCart = () => {
 // Calculo el total del carrito
 
 const findCartInfo = () => {
-  let productos = getProductFromStorage();
-  let total = productos.reduce((acc, product) => {
+  let product = getProductFromStorage();
+  let total = product.reduce((acc, product) => {
     let price = parseFloat(product.price.substr(1));
     return (acc += price);
   }, 0);
 
   return {
     total: total.toFixed(2),
-    productCount: productos.length,
+    productCount: product.length,
   };
 };
 
@@ -173,12 +174,41 @@ const deleteProduct = (e) => {
     },
   }).showToast();
 
-  let productos = getProductFromStorage();
-  let updatedproductos = productos.filter((product) => {
+  let product = getProductFromStorage();
+  let updatedproduct = product.filter((product) => {
     return product.id !== parseInt(cartItem.dataset.id);
   });
-  localStorage.setItem("productos", JSON.stringify(updatedproductos));
+  localStorage.setItem("product", JSON.stringify(updatedproduct));
   updateCartInfo();
+};
+
+// Boton para confirmar la compra
+
+const confirmPurchase = () => {
+  Swal.fire({
+    title: "Quisieras confirmar tu compra?",
+    text: "Al confirmar aceptarias llevar todos los productos que estan en tu carrito actualmente.",
+    icon: "warning",
+    showCancelButton: true,
+    confirmButtonColor: "#3085d6",
+    cancelButtonColor: "#d33",
+    confirmButtonText: "Si, estoy seguro!",
+    cancelButtonText: "No, cancelar!",
+  }).then((result) => {
+    if (result.isConfirmed) {
+      Swal.fire(
+        "Muchas gracias por tu compra!",
+        "Vuelve a comprar nuevamente cuando gustes!",
+        "success"
+      );
+
+      // Si la compra se confirma, se vacia el carrito y el local storage, tambien se updatea la info. Si se cancela, queda todo como estaba
+
+      localStorage.clear();
+      cartList.innerHTML = "";
+      updateCartInfo();
+    }
+  });
 };
 
 // Todos los Eventlisteners
@@ -200,6 +230,8 @@ const eventListeners = () => {
   productList.addEventListener("click", purchaseProduct);
 
   cartList.addEventListener("click", deleteProduct);
+
+  confirmPurchaseBtn.addEventListener("click", confirmPurchase);
 };
 
 eventListeners();
